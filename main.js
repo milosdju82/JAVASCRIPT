@@ -14,6 +14,6 @@ console.log("Mike is " + mike + " years old now");
 
 
 var FirstFlock = 78 - 12;
-var SecondFlock = 57 + 12 - 4;
+var SecondFlock = 57 + 12;
 
-console.log(FirstFlock >= SecondFlock);
+console.log(FirstFlock >= SecondFlock - 4);
