@@ -37,17 +37,24 @@ if (a * b * c > 0) {
 
 // TASK 3
 
-var statement = "Hello World";
+var statement = "Italian";
 
 switch (statement) {
-	case "Hello World":
+	case "Italian":
 		console.log("Ciao mondo");
-	case "Hello World":
+		//break;
+	case "German":
 		console.log("Hallo Welt");
-	case "Hello World":
+		//break;
+	case "France":
 		console.log("Bonjour le monde");
-	case "Hello World":
+		//break;
+	case "Spanish":
 		console.log("Hola Mundo");
+		// break;
+	case "Portuguese":
+		console.log("Ola Mundo");
+		break;
 	default:
 		console.log("Hello World");
 }
