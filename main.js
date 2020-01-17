@@ -1,76 +1,99 @@
- 
-// TASK 1
 
-var a = 15;
-var b = -2;
-var c = 22;
-var d = 0;
-var e = 13;
 
-if (a > b && a > c && a > d && a > e) {
-    console.log("Larger number is " + a);
-} else if (b > a && b > c && b > d && b > e) {
-    console.log("Larger number is " + b);
-} else if (c > a && c > b && c > d && c > e) {
-    console.log("Larger number is " + c);
-} else if (d > a && d > c && d > b && d > e) {
-    console.log("Larger number is " + d);
-} else {
-    console.log("Larger number is " + e);
+// TASK 6
+
+function lowestNumber(arr) {
+
+	var lowest = arr[0];
+
+	for (var i = 1; i < arr.length; i++) {
+		if (arr[i] < lowest) {
+			lowest = arr[i];
+		}
+	}
+	return lowest;
+}
+
+
+function highestNumber(arr) {
+
+	var highest = arr[0];
+
+	for (var i = 1; i < arr.length; i++) {
+		if (arr[i] > highest) {
+			highest = arr[i];
+		}
+	}
+	return highest;
+}
+
+
+function multiply(lowestNumber, highestNumber) {
+
+	var arr = [10, 15, 5, 44, 30, 26, 8];
+
+	var lowest = lowestNumber(arr);
+	var highest = highestNumber(arr);
+
+	var result = lowest * highest;
+
+	console.log(result);
+}
+
+
+multiply(lowestNumber, highestNumber);
+
+
+
+
+// TASK 7
+
+function uniqueNumbers(list) {
+	var uniqueArr = [];
+
+	found = false;
+	for (var i = 0; i < list.length; i++) {
+		for (var j = 0; j < list.length; j++) {
+			if (i === j) {
+				continue;
+			} else {
+				if (list[i] == list[j]) {
+					found = true;
+					break;
+				}
+			}
+		} if (!found) {
+			uniqueArr[uniqueArr.length] = list[i];
+		}
+		found = false;
+	}
+	return uniqueArr;
+}
+
+
+function deleteBiggest(list) {
+	var withoutBiggest = [];
+	var biggestNumber = highestNumber(list);
+
+	for (i = 0; i < list.length; i++) {
+		if (list[i] === biggestNumber) {
+			continue;
+		} else {
+			withoutBiggest[withoutBiggest.length] = list[i];
+		}
+	}
+	return withoutBiggest;
+}
+
+
+function finalFunction(list, deleteBiggest) {
+	var uniqeList = uniqueNumbers(list);
+	var finalList = deleteBiggest(uniqeList);
+
+	console.log(finalList);
 }
 
 
 
-// TASK 2
+finalFunction([15, 35, 46, 23, 15, 17, 23, 24, 35, 12, 72, 64, 35, 22, 64], deleteBiggest);
 
-var a = 3;
-var b = -7;
-var c = 2;
-
-if (a * b * c > 0) {
-	console.log("The sign is +");
-} else {
-	console.log("The sign is -");
-}
-
-
-
-// TASK 3
-
-var statement = "Italian";
-
-switch (statement) {
-	case "Italian":
-		console.log("Ciao mondo");
-		//break;
-	case "German":
-		console.log("Hallo Welt");
-		//break;
-	case "France":
-		console.log("Bonjour le monde");
-		//break;
-	case "Spanish":
-		console.log("Hola Mundo");
-		// break;
-	case "Portuguese":
-		console.log("Ola Mundo");
-		break;
-	default:
-		console.log("Hello World");
-}
-
-
-
-// TASK 4
-
-var userAge = 30;
-
-var check = userAge >= 28 ? true : false;
-
-if (!check) {
-	console.log("User is less than 28 years old");
-} else if (userAge != 28) {
-	console.log("User is older than 28");
-} else {
-	console.log("User is 28");
-}
