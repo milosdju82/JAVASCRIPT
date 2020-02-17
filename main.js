@@ -27,7 +27,7 @@ var persona = {
 
 };
 
-persona.callingData(this);
+persona.callingData();
 
 
 
