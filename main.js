@@ -1,244 +1,114 @@
 
-// TASK 5 previous homework
+// TASK 1
 
-var person = {
-	name: "Jack",
-	age: 32,
-	married: true
-};
+function Student(name, lastName, age, averageGrade) {
 
-var newPerson = Object.create(person);
+	this.name = name;
+	this.lastName = lastName;
+	this.age = age;
+	this.averageGrade = averageGrade;
+}
 
-console.log(newPerson.age);
+var studentOne = new Student("Dragan", "Petrovic", 23, 8);
+var studentTwo = new Student("Marina", "Paunovic", 24, 9);
+var studentThree = new Student("Zoe", "Drobnjak", 21, 10);
+var studentFour = new Student("Goran", "Lukic", 25, 7);
 
-
-
-
-// TASK 6 previous homework
-
-var persona = {
-	name: "Mike",
-	age: 28,
-	married: true,
-
-	callingData: function() {
-		console.log(this.name, this.age);
-	}
-
-};
-
-persona.callingData();
+console.log(studentOne, studentTwo, studentThree, studentFour);
 
 
 
 
-// TASK 7 previous homework
+// TASK 2
 
-var personX = {
-	addProperties: function(name, age, married) {
-		this.name = name;
-		this.age = age;
-		this.married = married;
-		console.log(this);
-	}
-};
+function Players(name, age, goals, nationality, yellowCards) {
 
-personX.addProperties("Milos", 37, true);
+	this.name = name;
+	this.age = age;
+	this.goals = goals;
+	this.nationality = nationality;
+	this.yellowCards = yellowCards;
+}
 
+var playerOne = new Players("Hakim Ziyech", 26, 10, "Marocco", 1);
+var playerTwo = new Players("Dusan Tadic", 31, 13, "Serbia", 5);
+var playerThree = new Players("Donny van de Beek", 22, 14, "Netherlands", 6);
+var playerFour = new Players("Quincy Promes", 28, 17, "Netherlands", 5);
+var playerFive = new Players("Lisandro Martínez", 22, 2, "Argentina", 6);
 
-
-
-// TASK 1 OF 2
-
-var data = [1, 2, 3]
-var a = 0;
-
-for(var i = 0; i < data.length; i++) {
-	for(var j = 0; j < data.length; j++) {
-		a++;
-		console.log("At position " + i, "subposition " + j, "value is " + a);
-	}
-};
-
-// TASK 2 OF 2
-
-var dataX = {
-	arrayOfObjects: [
-	{
-		name: "Dragche",
-		age: 20,
-		status: "single"
-	},
-	{
-		name: "Goranche",
-		age: 30,
-		status: "married"
-	},
-	{
-		name: "Milanche",
-		age: 40,
-		status: "divorced"
-	}
-	],
-	showData: function(name, age, status) {
-		this.name = name;
-		this.age = age;
-		this.status = status;
-
-		console.log(this);
-	}
-};
-
-dataX.showData(dataX.arrayOfObjects[0].name, dataX.arrayOfObjects[0].age, dataX.arrayOfObjects[0].status);
-dataX.showData(dataX.arrayOfObjects[1].name, dataX.arrayOfObjects[1].age, dataX.arrayOfObjects[1].status);
-dataX.showData(dataX.arrayOfObjects[2].name, dataX.arrayOfObjects[2].age, dataX.arrayOfObjects[2].status);
+console.log(playerOne, playerTwo, playerThree, playerFour, playerFive);
 
 
 
 
-// TASK 1 PRACTICE
+// TASK 3
 
-var someData = {
-	name: "Peter",
-	lastName: "Dinklage",
-	status: "married"
-};
+var ajaxPlayers = [
+	["Hakim", "Ziyech", 26, 10, "Marocco", 1], 
+	["Dusan",  "Tadic", 31, 13, "Serbia", 5], 
+	["Donny", "van de Beek", 22, 14, "Netherlands", 6], 
+	["Quincy", "Promes", 28, 17, "Netherlands", 5], 
+	["Lisandro", "Martinez", 22, 2, "Argentina", 6]
+];
 
-function repacked(sameObject) {
-	var repackedObject = {
-		[sameObject.name]: sameObject.name,
-		[sameObject.lastName]: sameObject.lastName,
-		[sameObject.status]: sameObject.status
+function PlayersLoop(player) {
+
+	this.name = player[0];
+	this.lastName = player[1]
+	this.age = player[2];
+	this.goals = player[3];
+	this.nationality = player[4];
+	this.yellowCards = player[5];
+}
+
+for (var i = 0; i < ajaxPlayers.length; i++) {
+	this[ajaxPlayers[i][0].toLowerCase()] = new PlayersLoop(ajaxPlayers[i]);
+}
+
+console.log(hakim, dusan, donny, quincy, lisandro);
+
+
+
+
+// TASK 4
+
+function Operation(numOne, numTwo, operation) {
+
+	this.firstNumber = numOne;
+	this.secondNumber = numTwo;
+	this.method = function() {
+		return operation(this.firstNumber, this.secondNumber);
 	};
-	console.log(repackedObject);
-};
-
-repacked(someData);
-
-
-
-
-// TASK 2 PRACTICE
-
-var someData = [13, 45, 56, [32, 11], 27, [55, 92]];
-
-function oneArray(list) {
-	var newArray = [];
-
-	for (var i = 0; i < list.length; i++) {
-		if (list[i] > 0) {
-			newArray[newArray.length] = list[i];
-		}
-		for (var j = 0; j < list[i].length; j++) {
-			if (list[i].length > 0) {
-				newArray[newArray.length] = list[i][j];
-			}
-		}
-	}
-	return newArray;
 }
 
-var allInOneArray = oneArray(someData);
-console.log(allInOneArray);
-
-
-
-
-// TASK 3 PRACTICE
-
-var someData = [13, 45, 56, [32, 11], 27, [55, 92]];
-var subArrays = [];
-
-function getBothSubarrays(list) {
-	for (var i = 0; i < list.length; i++) {
-		if (list[i].length > 1) {
-			subArrays[subArrays.length] = list[i];
-		}
-	}
-	return subArrays;
-};
-
-var subArrays = getBothSubarrays(someData);
-console.log(subArrays);
-
-
-function mergeSubarrays(subArrays) {
-	var merged = [];
-
-	for (var i = 0; i < subArrays.length; i++) {
-		for (var j = 0; j < subArrays[i].length; j++) {
-			merged[merged.length] = subArrays[i][j];
-		}
-	}
-	return merged;
+function add(numOne, numTwo) {
+	var result = numOne + numTwo;
+	return result;
 }
 
-var finalArray = mergeSubarrays(subArrays);
-console.log(finalArray);
-
-
-
-
-// TASK 4 PRACTICE
-
-var someData = {
-	name: "Peter",
-	lastName: "Dinklage",
-	status: "married"
-};
-
-function checkObject(obj) {
-
-	if (obj.hasOwnProperty("name")) {
-		return removeName;
-	} else {
-		return addName;
-	}
+function substract(numOne, numTwo) {
+	var result = numOne - numTwo;
+	return result;
 }
 
-function removeName(obj) {
-	delete obj.name;
-	console.log("name removed", obj);
+function multiply(numOne, numTwo) {
+	var result = numOne * numTwo;
+	return result;
 }
 
-function addName(obj, name) {
-	obj.name = name;
-	console.log("name added", obj);
+function divide(numOne, numTwo) {
+	var result = numOne / numTwo;
+	return result;
 }
 
-var resultRemoveName = checkObject(someData);
-resultRemoveName(someData);
+var addition = new Operation(20, 20, add);
+console.log(addition.method());
 
-var resultAddName = checkObject(someData);
-resultAddName(someData, "Joe");
+var substraction = new Operation(40, 10, substract);
+console.log(substraction.method());
 
+var multiplication = new Operation(10, 2, multiply);
+console.log(multiplication.method());
 
-
-
-// TASK 5 PRACTICE
-
-var someData = {
-	name: "Peter",
-	lastName: "Dinklage",
-	status: "married",
-	isThereName: function() {
-		var isThereName = this.hasOwnProperty("name");
-
-		if (isThereName) {
-			this.secondMethod = function() {
-				console.log("second method called");
-
-				this.thirdMethod = function() {
-					console.log("third method called");
-					addName(this, "Mike");
-				};
-				removeName(this);
-				this.thirdMethod();
-			};
-			this.secondMethod();
-		}
-		return isThereName;
-	}
-};
-
-someData.isThereName();
+var division = new Operation(20, 2, divide);
+console.log(division.method());
