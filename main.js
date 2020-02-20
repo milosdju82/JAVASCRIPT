@@ -8,10 +8,9 @@ function transformText(loremIpsumText) {
 
 	var transformed = text.toLowerCase();
 	console.log(transformed);
-}
+};
 
 transformText(text);
-
 
 
 
@@ -24,10 +23,9 @@ function checkText(loremIpsumText, findWord) {
 	} else {
 		console.log("The word " + findWord.toUpperCase() + " does not exists in sentence");
 	}
-}
+};
 
 checkText(text, "sit");
-
 
 
 
@@ -36,10 +34,9 @@ checkText(text, "sit");
 function findLastLetter(loremIpsumText) {
 
 	console.log(text.charAt(text.length - 1));
-}
+};
 
 findLastLetter(text);
-
 
 
 
@@ -48,10 +45,9 @@ findLastLetter(text);
 function splitText(loremIpsumText) {
 	var newText = text.split(" ", 3);
 	console.log(newText);
-}
+};
 
 splitText(text);
-
 
 
 
@@ -68,11 +64,10 @@ function modyfyText(piterAgain) {
 	piterAgain = piterAgain.substring(0, o) + "e" + piterAgain.substring(o + 1);
 
 	return piterAgain;
-}
+};
 
 var newText = modyfyText(text);
 console.log(newText);
-
 
 
 
@@ -84,15 +79,14 @@ var removeNumber = 56;
 function removeElement(data, num) {
 
 	var index = data.indexOf(num);
-	if (index = true) {
+	if (index > -1) {
 		data.splice(index, 1);
 	}
 	return data;
-}
+};
 
 var newArray = removeElement(someData, removeNumber);
 console.log(newArray);
-
 
 
 
@@ -108,10 +102,9 @@ function repackArray(data) {
 	var otherData = newArray.concat(arrayEnd);
 
 	console.log(otherData);
-}
+};
 
 repackArray(someOtherData);
-
 
 
 
@@ -127,10 +120,9 @@ function repackReduceArr(arr) {
 		} else return element - arr[arr.indexOf(element) - 1];
 	});
 	console.log(reducedArray);
-}
+};
 
 repackReduceArr(someNewData);
-
 
 
 
@@ -173,6 +165,6 @@ function averageGrade(object, grade) {
 
 	console.log("Students above average", toPass);
 	return toPass;
-}
+};
 
 averageGrade(students, average);
