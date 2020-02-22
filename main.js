@@ -1,29 +1,23 @@
 
 // TASK 1
 
-// function browserStatus() {
-// 	if (navigator.onLine) {
-// 		alert("Browser is online")
-// 	} else {
-// 		console.log("Browser is offline")
-// 	}
-// };
+function browserStatus() {
+	if (navigator.onLine) {
+		alert("Browser is online")
+	} else {
+		console.log("Browser is offline")
+	}
+};
 
-// browserStatus();
+browserStatus();
 
 
 
 // TASK 2
 
 // function reloadPage() {
-// 	window.onload = function() {
-// 		if (!location.hash) {
-// 			location = location + "#reloaded";
-// 			location.reload();
-// 		} else if (location.hash = "reloaded") {
-// 			alert("Page has been reloaded")
-// 		}
-// 	}
+// 	setTimeout("location.reload();", 2000);
+// 	console.log("Page reloads every 2 seconds");
 // };
 
 // reloadPage();
@@ -33,15 +27,16 @@
 // TASK 3
 
 // function redirect() {
+// 	setTimeout(function() {
+// 		window.location = "https://www.google.com/";
+// 	}, 3000);
+// // 		setTimeout(function() {
+// // 		window.history.back(1);
+// // 	}, 3000);
+// // };
 
-// 	if (location.href = "https://www.google.com/") {
-// 		location.href = window.history.back(1)
-// 	} else {
-// 		location.href = "https://www.google.com/"
-// 	}
-// };
+// redirect();
 
-// var goTo = setTimeout(redirect, 3000)
 
 
 
@@ -57,19 +52,26 @@
 // 	}
 // };
 
-// var int = setInterval(incrementNum, 100);
+// var int = setInterval(incrementNum, 800);
 
 
 
 // TASK 5
 
+// var counter = 0;
+
 // function randomNumber() {
 
+// 	counter++;
 // 	var result = Math.round(Math.random() * 10);
-// 	return result;
+// 	console.log(result);
+
+// 	if (counter == 10) {
+// 		clearInterval(other);
+// 	}
 // }
 
-// var call = randomNumber();
+// var other = setInterval(randomNumber, 500);
 
 
 
@@ -124,16 +126,10 @@
 // 			loggedInUser.status = "inactive";
 // 			localStorage.removeItem("loggedInUser");
 // 			console.log(loggedInUser.name + " has logged out.");
-// 		}, 120000);
+// 		}, 60000);
 // 	} else {
 // 		console.log("User with name " + userName + " does not exist!");
 // 	}
 // };
 
 // logIn();
-
-
-// TASK STRINGS
-
-// var array = ["Peter", "Jo", "Steaven", "Jack", "Jim"];
-
