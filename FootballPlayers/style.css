@@ -1,0 +1,95 @@
+
+/*GENERAL STYLES*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Helvetica;
+	color: #242424;
+}
+
+.main-wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-family: Helvetica;
+	color: #d8354d;
+	margin-top: 0;
+	text-shadow: 0px 0px 3px #ebebeb;
+}
+
+/*HEADER*/
+header {
+	background-color: #242424;
+	padding: 5px 0;
+}
+
+header .logo {
+	display: block;
+}
+
+header .logo img {
+	width: 80px;
+}
+
+/*MAIN*/
+main {
+	background-image: url(img/background.jpg);
+	background-position: center;
+	background-size: 100%;
+	background-attachment: fixed;
+	padding-top: 30px;
+}
+
+section img {
+	width: 260px;
+}
+
+section.players {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+section.players .player {
+	margin: 20px;
+	padding-top: 10px;
+	background-color: #ebebeb;
+	margin-right: 4%;
+	border: solid 2px #d8354d;
+	border-radius: 7px;
+	box-shadow: 0px 0px 3px #ebebeb;
+}
+
+section.players .player:nth-child(4n) {
+	margin-right: 0;
+}
+
+section.players .player:nth-child(1n) {
+	margin-left: 0;
+}
+
+section.players .player > div {
+	display: flex;
+	justify-content: space-around;
+	padding: 3px 15px;
+	font-weight: 600;
+}
+
+section.players .player > div:first-child {
+	font-size: 22px;
+}
+
+section.players .player > div:nth-child(n + 3) {
+	font-weight: 300;
+	font-style: normal;
+}
+
+section.players.substitutions {
+    border-top: solid 2px #d8354d;
+    padding-top: 25px;
+    margin-top: 30px;
+}
