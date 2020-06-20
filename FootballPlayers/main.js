@@ -125,15 +125,18 @@ var players = [
 
 
 // Navbar logo
-var logo = document.createElement("img");
-logo.src = "img/logo.png";
-var addLogo = document.querySelector("a").appendChild(logo);
-
+function addLogo() {
+	var logo = document.createElement("img");
+	logo.src = "img/logo.png";
+	var addLogo =document.querySelector("a").appendChild(logo);
+};
 
 // h1 main section
-var title = document.createElement('h1');
-title.textContent = "Ajax Football Club";
-var addTitle = document.querySelector('section').before(title);
+function addTitle() {
+	var title = document.createElement('h1');
+	title.textContent = "Ajax Football Club";
+	var addTitle = document.querySelector('section').before(title);
+};
 
 
 //  Main Section 
@@ -203,3 +206,5 @@ function makeSubstitution() {
 // Initialize functions
 addPlayers();
 setInterval(makeSubstitution, 5000);
+addLogo();
+addTitle();
