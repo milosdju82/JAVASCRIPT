@@ -125,18 +125,29 @@ var players = [
 
 
 // Navbar logo
-var logo = document.createElement("img");
-logo.src = "img/logo.png";
-var addLogo = document.querySelector("a").appendChild(logo);
+function addLogo() {
+	var logo = document.createElement("img");
+	logo.src = "img/logo.png";
+	var addLogo =document.querySelector("a").appendChild(logo);
+};
 
 
-// h1 main section
-var title = document.createElement('h1');
-title.textContent = "Ajax Football Club";
-var addTitle = document.querySelector('section').before(title);
+// Title
+function addTitle() {
+	var title = document.createElement('h1');
+	title.textContent = "Ajax Football Club";
+	var addTitle = document.querySelector('a').after(title);
+};
 
 
-//  Main Section 
+//  Main Section
+function addSubtitle(place, text) {
+	var subTitle = document.createElement('h2');
+	subTitle.textContent = text;
+	var addSubTitle = document.querySelector(place).before(subTitle);
+};
+
+ 
 function getRandomNumber(arr) {
 	return Math.floor(Math.random() * arr.length); // Zaokruzuje nadole (do 14)
 };
@@ -203,3 +214,7 @@ function makeSubstitution() {
 // Initialize functions
 addPlayers();
 setInterval(makeSubstitution, 5000);
+addLogo();
+addTitle();
+addSubtitle('.first-team', "First Team:");
+addSubtitle('.substitutions', "Substitutions:");
